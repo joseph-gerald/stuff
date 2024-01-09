@@ -2,6 +2,7 @@ import socket
 
 from .generators import *
 from .utils import *
+from .function_wrapper import Functions
 
 from struct import pack, unpack
 
@@ -13,24 +14,14 @@ GENERATORS = [
     write_single_coil,
 ]
 
-
 class Modbus:
-    def __init__(self, host, port):
+    def __init__(self, host: str, port: int):
         self.host = host
         self.port = port
 
+        self.functions = Functions(self)
+
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    def __generateMBAPHeader(self, length, transaction_id=0, protcol_id=0):
-        # https://www.simplymodbus.ca/TCP.htm
-
-        mbap = [
-            *bytify(transaction_id),  # Split transaction id into 2 bytes
-            *bytify(protcol_id),  # Split protocol id into 2 bytes
-            *bytify(length)  # Split length into 2 bytes
-        ]
-
-        return mbap
 
     def connect(self):
         self.socket.connect((self.host, self.port))
@@ -55,10 +46,9 @@ class Modbus:
         """
 
         DATA = GENERATORS[function_code.value - 1](kwargs)
-        HEADER = self.__generateMBAPHeader(len(DATA))
+        HEADER = generate_mbap_header(len(DATA))
 
         # Combine header with data for final payload
         PAYLOAD = [*HEADER, *DATA]
-        print(PAYLOAD)
 
         return self.send_bytes(self.pack_bytes(PAYLOAD))

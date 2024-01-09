@@ -1,7 +1,6 @@
 RUN = __name__ == "__main__"
 
 import math
-from enum import Enum
 
 if RUN:
     from errors import *
@@ -10,33 +9,9 @@ else:
     from .utils import *
     from .errors import *
 
-# https://en.wikipedia.org/wiki/Modbus#Public_function_codes
-
-
-class FunctionCode(Enum):
-    ReadCoils = 1
-    ReadDiscreteInputs = 2
-    ReadMultipleHoldingRegisters = 3
-    ReadInputRegisters = 4
-    WriteSingleCoil = 5
-    WriteSingleHoldingRegister = 6
-
-    WriteMultipleCoils = 15
-    WriteMultipleHoldingRegisters = 16
-
-    ReadFileRecord = 20
-    WriteFileRecord = 21
-    MaskWriteRegister = 22
-    ReadWriteMultipleHoldingRegisters = 23
-    ReadFIFOQueue = 24
-
-    ReadDeviceIdentification = 43
-
-
 # implemented from
 # https://www.simplymodbus.ca/FAQ.htm
 # https://www.simplymodbus.ca/TCP.htm
-
 
 def read_coils(kwargs):
     """
