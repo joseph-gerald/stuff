@@ -4,6 +4,7 @@
 import socket
 import struct
 import time
+from struct import pack, unpack
 
 # Create a TCP/IP socket
 TCP_IP = 'localhost'
@@ -22,12 +23,9 @@ try:
                       0xff,
                       0x00)
     sock.send(req)
-    print("TX: (%s)" % req)
+    print(unpack("%sB" % len(req), req))
 
     print(sock.recv(1024))
-
-
-    time.sleep(2)
 
 finally:
     print('\nCLOSING SOCKET')
