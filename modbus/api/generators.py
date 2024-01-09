@@ -170,20 +170,25 @@ def write_multiple_coils(kwargs):
 
     # True + 0 = 1, False + 0 = 0, coerce from bool to int
     BIT_ARRAYS = list(map(lambda x: x + 0, kwargs["values"]))
+    BIT_ARRAYS = list(reversed(BIT_ARRAYS))
     CHUNKS = chunkify(BIT_ARRAYS, 8)
 
     while (len(CHUNKS[-1]) % 8 != 0):
         CHUNKS[-1].insert(0, 0)
 
-    print(CHUNKS)
+    BYTES = []
+
+    for CHUNK in CHUNKS:
+        STR_CHUNK = "".join(list(map(lambda bit: str(bit), CHUNK)))
+        BYTES.append(int(STR_CHUNK, 2))
 
     return [
         kwargs["address"],
         FunctionCode.WriteMultipleCoils.value,
         *bytify(kwargs["start"]),
         *bytify(kwargs["size"]),
-        math.ceil(kwargs["size"]/8),
-
+        math.ceil((kwargs["size"])/8),
+        *BYTES
     ]
 
 

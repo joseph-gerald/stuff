@@ -6,13 +6,17 @@ from .function_wrapper import Functions
 
 from struct import pack, unpack
 
-GENERATORS = [
-    read_coils,
-    read_discrete_inputs,
-    read_multiple_holding_registers,
-    read_input_registers,
-    write_single_coil,
-]
+GENERATORS = {
+    1: read_coils,
+    2: read_discrete_inputs,
+    3: read_multiple_holding_registers,
+    4: read_input_registers,
+    5: write_single_coil,
+    6: write_single_holding_register,
+
+    15: write_multiple_coils,
+    16: write_multiple_holding_registers
+}
 
 class Modbus:
     def __init__(self, host: str, port: int):
@@ -45,7 +49,7 @@ class Modbus:
         Generate and send payload to modbus
         """
 
-        DATA = GENERATORS[function_code.value - 1](kwargs)
+        DATA = GENERATORS[function_code.value](kwargs)
         HEADER = generate_mbap_header(len(DATA))
 
         # Combine header with data for final payload

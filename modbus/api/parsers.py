@@ -65,7 +65,9 @@ class GenericBinaryRead:
         self.data_bytes_size = response[1]
         self.data_bytes = response[2:]
 
-        self.data = "".join(list(map(lambda byte: bitify(byte), self.data_bytes)))
+        byte_arr = list(map(lambda byte: bitify(byte), self.data_bytes))
+        
+        self.data = "".join(byte_arr)
 
         self.data = self.data[:size]
 

@@ -48,7 +48,7 @@ def strip_mbap_header(bytes):
     return bytes[7:]
 
 def bitify(n):
-    return '{0:08b}'.format(n)
+    return "".join(reversed(list('{0:08b}'.format(n))))
 
 def unbitify(byte_arr: list):
     index = 1
