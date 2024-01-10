@@ -1,6 +1,4 @@
 from api.modbus import Modbus
-from api.utils import FunctionCode
-from struct import pack, unpack
 
 
 modbus = Modbus("127.0.0.1", 502)

@@ -46,12 +46,24 @@ class TestModbus(unittest.TestCase):
         print("\nInput Registers:", res.data)
     
     def test_set_coils_to_zero(self):
-        print("\nWriting to coils #0 -> #100 to False/OFF")
+        print("\nWriting to coils #1 -> #100 to False/OFF")
         res = modbus.functions.write_multiple_coils(11, 0, 100, [True]*100)
-        
 
+    def test_read_write_holding_registers(self):
+        print("\nWriting to holding registers #1 -> #4 to True/On")
 
+        modbus.functions.write_multiple_holding_registers(11, 0, 4, [
+            100,
+            200,
+            300,
+            500
+        ])
 
+        print("Reading holding registers #1 -> #8")
+
+        res = modbus.functions.read_multiple_holding_registers(11, 0,8)
+
+        print(res.data)
 
 if __name__ == '__main__':
     unittest.main(exit=False)

@@ -121,3 +121,20 @@ class Functions:
 
         return (self.modbus.pass_function(FunctionCode.WriteMultipleCoils, address=address, start=start, size=size, values=values))
 
+    def write_multiple_holding_registers(self, address: int, start: int, size: int, values: list):   
+        """
+        This command is writing the contents of two analog output holding registers # 40002 & 40003 to the slave device with address 17.
+
+        11 10 0001 0002 04 000A 0102
+
+        11: The Slave Address (11 hex = address17 )
+        10: The Function Code 16 (Preset Multiple Registers, 10 hex - 16 )
+        0001: The Data Address of the first register.
+                    ( 0001 hex = 1 , + 40001 offset = register #40002 )
+        0002: The number of registers to write
+        04: The number of data bytes to follow (2 registers x 2 bytes each = 4 bytes)
+        000A: The value to write to register 40002
+        0102: The value to write to register 40003
+        """
+
+        return (self.modbus.pass_function(FunctionCode.WriteMultipleHoldingRegisters, address=address, start=start, size=size, values=values))
