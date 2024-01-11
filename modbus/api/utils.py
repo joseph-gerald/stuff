@@ -1,4 +1,5 @@
 from enum import Enum
+import time
 
 # https://en.wikipedia.org/wiki/Modbus#Public_function_codes
 
@@ -59,3 +60,19 @@ def unbitify(byte_arr: list):
         index += 1
 
     return total
+
+def log(text):
+    print(time.strftime("[%H:%M:%S] " + text))
+
+def coerce_type(input):
+    if (input == None): return None
+
+    if (type(input) is str):
+        if (input.isdigit()):
+            return int(input)
+        
+        if (input.lower() in ["true", "false"]):
+            return bool(input)
+        
+        return input
+

@@ -1,7 +1,6 @@
 RUN = __name__ == "__main__"
 
-import math
-from enum import Enum
+import time
 from struct import unpack
 
 if RUN:
@@ -56,7 +55,12 @@ class GenericBinaryRead:
     The more significant bits contain the higher coil variables. This shows that coil 36 is off (0) and 43 is on (1). Due to the number of coils requested, the last data field1B contains the status of only 5 coils.  The three most significant bits in this data field are filled in with zeroes.
     """
 
-    def __init__(self, bytes: bytes, size: int):
+    def __init__(self, start: int, bytes: bytes, size: int):
+        self.start_time = start
+        self.end_time = time.time()
+
+        self.response_time = start - self.end_time
+
         response = unpack("%sB" % len(bytes), bytes)
         response = strip_mbap_header(response)
 
@@ -88,7 +92,12 @@ class GenericByteRead:
     4340: The contents of register 40110
     """
 
-    def __init__(self, bytes: bytes, size: int):
+    def __init__(self, start: int, bytes: bytes, size: int):
+        self.start_time = start
+        self.end_time = time.time()
+
+        self.response_time = start - self.end_time
+
         response = unpack("%sB" % len(bytes), bytes)
         response = strip_mbap_header(response)
 
@@ -98,3 +107,12 @@ class GenericByteRead:
         self.data_bytes = response[2:]
 
         self.data = list(map(unbitify, chunkify(self.data_bytes, 2)))
+
+class GenericEcho:
+    def __init__(self, start: int, bytes: bytes):
+        self.start_time = start
+        self.end_time = time.time()
+
+        self.response_time = start - self.end_time
+
+        self.data = bytes

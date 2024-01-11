@@ -1,6 +1,8 @@
 from .parsers import *
 from .utils import *
 
+import time
+
 class Functions:
     def __init__(self, modbus):
         self.modbus = modbus
@@ -18,7 +20,7 @@ class Functions:
         0025: The total number of coils requested.  (25 hex = 37,  inputs 20 to 56 )
         """
 
-        return GenericBinaryRead(self.modbus.pass_function(FunctionCode.ReadCoils, address=address, start=start, size=size), size)
+        return GenericBinaryRead(time.time(), self.modbus.pass_function(FunctionCode.ReadCoils, address=address, start=start, size=size), size)
 
     def read_discrete_inputs(self, address: int, start: int, size: int) -> GenericBinaryRead:
         """
@@ -34,7 +36,7 @@ class Functions:
         0016: The total number of coils requested. (16 hex = 22,  inputs 10197 to 10218 )
         """
 
-        return GenericBinaryRead(self.modbus.pass_function(FunctionCode.ReadDiscreteInputs, address=address, start=start, size=size), size)
+        return GenericBinaryRead(time.time(), self.modbus.pass_function(FunctionCode.ReadDiscreteInputs, address=address, start=start, size=size), size)
     
     def read_multiple_holding_registers(self, address: int, start: int, size: int) -> GenericByteRead:
         """
@@ -50,7 +52,7 @@ class Functions:
         0003: The total number of registers requested. (read 3 registers 40108 to 40110)
         """
 
-        return GenericByteRead(self.modbus.pass_function(FunctionCode.ReadMultipleHoldingRegisters, address=address, start=start, size=size), size)
+        return GenericByteRead(time.time(), self.modbus.pass_function(FunctionCode.ReadMultipleHoldingRegisters, address=address, start=start, size=size), size)
 
     def read_input_registers(self, address: int, start: int, size: int) -> GenericByteRead:
         """
@@ -66,7 +68,7 @@ class Functions:
         0001: The total number of registers requested. (read 1 register)
         """
 
-        return GenericByteRead(self.modbus.pass_function(FunctionCode.ReadInputRegisters, address=address, start=start, size=size), size)
+        return GenericByteRead(time.time(), self.modbus.pass_function(FunctionCode.ReadInputRegisters, address=address, start=start, size=size), size)
 
     def write_single_coil(self, address: int, coil_address: int, status: bool):
         """
@@ -82,7 +84,7 @@ class Functions:
         FF00: The status to write ( FF00 = ON,  0000 = OFF )
         """
 
-        return (self.modbus.pass_function(FunctionCode.WriteSingleCoil, address=address, coil_address=coil_address, status=status))
+        return GenericEcho(time.time(), self.modbus.pass_function(FunctionCode.WriteSingleCoil, address=address, coil_address=coil_address, status=status))
 
     def write_single_holding_register(self, address: int, register_address: int, value: int):
         """
@@ -98,7 +100,7 @@ class Functions:
         FF00: The status to write ( FF00 = ON,  0000 = OFF )
         """
 
-        return (self.modbus.pass_function(FunctionCode.WriteSingleHoldingRegister, address=address, register_address=register_address, value=value))
+        return GenericEcho(time.time(), self.modbus.pass_function(FunctionCode.WriteSingleHoldingRegister, address=address, register_address=register_address, value=value))
 
     def write_multiple_coils(self, address: int, start: int, size: int, values: list):
         """
@@ -119,7 +121,7 @@ class Functions:
         The more significant bits contain the higher coil variables. This shows that coil 20 is on (1) and 21 is off (0). Due to the number of coils requested, the last data field01 contains the status of only 2 coils.  The unused bits in the last data byte are filled in with zeroes.
         """
 
-        return (self.modbus.pass_function(FunctionCode.WriteMultipleCoils, address=address, start=start, size=size, values=values))
+        return GenericEcho(time.time(), self.modbus.pass_function(FunctionCode.WriteMultipleCoils, address=address, start=start, size=size, values=values))
 
     def write_multiple_holding_registers(self, address: int, start: int, size: int, values: list):   
         """
@@ -137,4 +139,4 @@ class Functions:
         0102: The value to write to register 40003
         """
 
-        return (self.modbus.pass_function(FunctionCode.WriteMultipleHoldingRegisters, address=address, start=start, size=size, values=values))
+        return GenericEcho(time.time(), self.modbus.pass_function(FunctionCode.WriteMultipleHoldingRegisters, address=address, start=start, size=size, values=values))
