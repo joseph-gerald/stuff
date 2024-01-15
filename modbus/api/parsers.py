@@ -109,10 +109,16 @@ class GenericByteRead:
         self.data = list(map(unbitify, chunkify(self.data_bytes, 2)))
 
 class GenericEcho:
-    def __init__(self, start: int, bytes: bytes):
+    def __init__(self, start: int, data: tuple):
         self.start_time = start
         self.end_time = time.time()
 
         self.response_time = start - self.end_time
 
-        self.data = bytes
+        response_bytes = data[0]
+    
+        response = unpack("%sB" % len(response_bytes), response_bytes)
+        response = list(strip_mbap_header(response))
+        request = strip_mbap_header(data[1])[:-2]
+
+        self.data = f"Echoed Correctly? {response == request} / {request}"

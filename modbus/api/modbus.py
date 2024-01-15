@@ -51,8 +51,8 @@ class Modbus:
 
         DATA = GENERATORS[function_code.value](kwargs)
         HEADER = generate_mbap_header(len(DATA))
-
+    
         # Combine header with data for final payload
         PAYLOAD = [*HEADER, *DATA]
 
-        return self.send_bytes(self.pack_bytes(PAYLOAD))
+        return (self.send_bytes(self.pack_bytes(PAYLOAD)), PAYLOAD)

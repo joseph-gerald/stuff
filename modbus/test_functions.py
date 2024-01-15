@@ -10,6 +10,11 @@ class TestModbus(unittest.TestCase):
         print("Sucesfully established connection!")
 
     def test_read_write_coils(self):
+        print("\nReading coils from Slave #1 from index 0 -> 20 (0 + 20)")
+        coil_data = modbus.functions.read_coils(1, 0, 16).data
+        
+        print("\nCoils:", coil_data)
+    
         print("\nWriting to coil #1 on Slave #1 to True")
         res = modbus.functions.write_single_coil(1, 0, True)
 
@@ -40,6 +45,7 @@ class TestModbus(unittest.TestCase):
         print("Coils were as expected!")
 
     def test_read_input_registers(self):
+        print("\nAttemping to Read Input Registers:", res.data)
         res = modbus.functions.read_input_registers(1, 4, 21)
 
         print("\nInput Registers:", res.data)
@@ -49,7 +55,7 @@ class TestModbus(unittest.TestCase):
         res = modbus.functions.write_multiple_coils(1, 0, 100, [True]*100)
 
     def test_read_write_holding_registers(self):
-        print("\nWriting to holding registers #1 -> #4 to True/On")
+        print("\nWriting to holding registers #1 -> #4 to [100, 200, 300, 500]")
 
         modbus.functions.write_multiple_holding_registers(1, 0, 4, [
             100,

@@ -20,7 +20,7 @@ class Functions:
         0025: The total number of coils requested.  (25 hex = 37,  inputs 20 to 56 )
         """
 
-        return GenericBinaryRead(time.time(), self.modbus.pass_function(FunctionCode.ReadCoils, address=address, start=start, size=size), size)
+        return GenericBinaryRead(time.time(), self.modbus.pass_function(FunctionCode.ReadCoils, address=address, start=start, size=size)[0], size)
 
     def read_discrete_inputs(self, address: int, start: int, size: int) -> GenericBinaryRead:
         """
@@ -36,7 +36,7 @@ class Functions:
         0016: The total number of coils requested. (16 hex = 22,  inputs 10197 to 10218 )
         """
 
-        return GenericBinaryRead(time.time(), self.modbus.pass_function(FunctionCode.ReadDiscreteInputs, address=address, start=start, size=size), size)
+        return GenericBinaryRead(time.time(), self.modbus.pass_function(FunctionCode.ReadDiscreteInputs, address=address, start=start, size=size)[0], size)
     
     def read_multiple_holding_registers(self, address: int, start: int, size: int) -> GenericByteRead:
         """
@@ -52,7 +52,7 @@ class Functions:
         0003: The total number of registers requested. (read 3 registers 40108 to 40110)
         """
 
-        return GenericByteRead(time.time(), self.modbus.pass_function(FunctionCode.ReadMultipleHoldingRegisters, address=address, start=start, size=size), size)
+        return GenericByteRead(time.time(), self.modbus.pass_function(FunctionCode.ReadMultipleHoldingRegisters, address=address, start=start, size=size)[0], size)
 
     def read_input_registers(self, address: int, start: int, size: int) -> GenericByteRead:
         """
@@ -68,7 +68,7 @@ class Functions:
         0001: The total number of registers requested. (read 1 register)
         """
 
-        return GenericByteRead(time.time(), self.modbus.pass_function(FunctionCode.ReadInputRegisters, address=address, start=start, size=size), size)
+        return GenericByteRead(time.time(), self.modbus.pass_function(FunctionCode.ReadInputRegisters, address=address, start=start, size=size)[0], size)
 
     def write_single_coil(self, address: int, coil_address: int, status: bool):
         """

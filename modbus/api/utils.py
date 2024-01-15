@@ -1,5 +1,6 @@
 from enum import Enum
 import time
+import json
 
 # https://en.wikipedia.org/wiki/Modbus#Public_function_codes
 
@@ -74,5 +75,11 @@ def coerce_type(input):
         if (input.lower() in ["true", "false"]):
             return bool(input)
         
+        try:
+            return json.loads(input)
+        except:
+            pass
+            
+
         return input
 

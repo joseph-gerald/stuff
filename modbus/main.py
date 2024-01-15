@@ -36,7 +36,7 @@ ARG_MAP = {
     "start": args.start,
     "size": args.size,
     "value": coerce_type(args.value_string),
-    "values": None if args.values_string == None else list(map(lambda value: coerce_type(value), args.values_string.split(","))),
+    "values": None if args.values_string == None else list(map(coerce_type, args.values_string.split(","))),
     "coil_address": args.coil_address,
     "register_address": args.register_address,
     "status": bool(args.status)

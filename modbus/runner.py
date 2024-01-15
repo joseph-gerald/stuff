@@ -16,6 +16,7 @@ parser.add_argument("-v", "-verbose", dest="verbose", type=bool, default=False)
 args = parser.parse_args()
 
 input_data = open("input.csv", "r").read()
+log_verbose = args.verbose
 
 modbus = Modbus(args.ip, args.port)
 modbus.connect()
@@ -34,38 +35,42 @@ FUNCTIONS = {
 }
 
 def handle_line(line: str, worker_index: int):
-    # Comment check
-    if ("#" in line and line.index("#") == 0):
-        return
-
-    parts = line.split(",")
+    parts = line.split(":")
+    VERBOSE_INSN = bool(int(parts.pop(0)))
 
     FUNCTION_CODE = FunctionCode(int(parts[0]))
     SLAVE_ADDRESS = int(parts[1])
-    POLL_SIZE = int(parts[2])
-    POLL_FREQUENCY = int(parts[3])
+
+    STARTUP_DELAY = int(parts[2])
+
+    POLL_SIZE = int(parts[3])
+    POLL_FREQUENCY = int(parts[4])
 
     # Leave only arguments left
-    args = map(coerce_type, parts[4:])
+    args = map(coerce_type, parts[5:])
 
     functions_args = [SLAVE_ADDRESS, *args]
- 
     FUNCTION = FUNCTIONS[FUNCTION_CODE.value]
 
     index = 0
 
-    while (POLL_SIZE > index or POLL_SIZE == -1):
-        res = FUNCTION(*functions_args)
+    time.sleep(STARTUP_DELAY/1000)
 
-        log(f"[Slave #{SLAVE_ADDRESS} / {FUNCTION_CODE.name} @ Worker-{worker_index}] {res.data}")
+    while (POLL_SIZE >= index or POLL_SIZE == -1):
+        res = FUNCTION(*functions_args)
+        if (not VERBOSE_INSN or log_verbose): log(f"[Slave #{SLAVE_ADDRESS} / {FUNCTION_CODE.name} @ Worker-{worker_index}] {res.data}")
 
         time.sleep(POLL_FREQUENCY/1000)
+        index += 1
 
 index = 0
 
 threads = []
 
 for line in input_data.splitlines():
+    if ("#" in line and line.index("#") == 0 or len(line) == 0):
+        continue
+
     thread = Thread(target=handle_line, args=[line, index])
     threads.append(thread)
 
