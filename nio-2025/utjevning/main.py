@@ -30,6 +30,9 @@ for index, pris in enumerate(priser):
 
     mål_priser = priser[index] = list(map(lambda høyde: abs(mål - høyde), høyder))
 
+    venstre = 0
+    høyre = 1
+
     # print()
     # print("#"*20)
     # print("HØYDE MÅL", mål)
@@ -38,25 +41,23 @@ for index, pris in enumerate(priser):
     
     for i in range(len(mål_priser) - index):
         budsjett = max_budsjett
-        local_lengste = -1
-        for i2 in range(len(mål_priser) - index - i):
-            pris_for_å_flatne = mål_priser[i2 + i]
-            
-            budsjett_post = budsjett - pris_for_å_flatne
 
-            if (budsjett_post < 0):
-                break
-
-            # print("budsjett_post", budsjett_post)
-            budsjett = budsjett_post
+        while høyre < len(mål_priser):
+            total = sum(mål_priser[venstre:høyre])
             
-            if (lengste_flate < i2 + 1):
-                lengste_flate = i2 + 1
+            if (total <= max_budsjett):
+                høyre += 1
+            else:
+                venstre += 1
+
+            lengde = høyre - venstre
+            print("□"*lengde)
+
         # print("local_lengste", local_lengste, local_lengste_index)
 
-print("lengste_flate", lengste_flate)
-
-print(priser)
+lengste_flate = høyre - venstre + 1
+print(lengste_flate)
+#print(priser)
 
 if (dev):
     pass
