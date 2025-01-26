@@ -14,8 +14,8 @@ def transfer():
         to = request.args.get('to')
         amount = float(request.args.get('amount'))
         password = request.args.get('password')
-    except ValueError:
-        return jsonify({'error': 'invalid amount'}), 400
+    except:
+        return jsonify({'error': 'error'}), 400
 
     if not to or not amount or not password:
         return jsonify({'error': 'missing parameters'}), 400
