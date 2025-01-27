@@ -1,10 +1,14 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
 from tronpy import Tron
 from tronpy.keys import PrivateKey
 from tronpy.providers import HTTPProvider
 import config
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
+
 client = Tron(HTTPProvider(api_key=config.API_KEY))
 priv_key = PrivateKey(bytes.fromhex(config.PRIVATE_KEY))
 
