@@ -1,1 +1,197 @@
-{"data":[{"token":"98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump","price":0.041833154290486584,"priceChange24hPercent":71344.34254450061,"volume24h":209590676.83527213,"volume24hChangePercent":null,"view24h":636,"view24hChangePercent":null,"liquidity":3304728.7860865504,"tokenData":{"name":"Large Language Model","symbol":"LLM","decimals":6,"icon":"https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmQmQUoTpBBcgnA5Bx5KpmgNLqLMuRRzvrUf3h85xUqo7W","website":null,"jupStrict":false},"network":"solana"},{"token":"2hM8gVaKdz3Eokx2QZY1a9oZDPx9J3zWP4gxzsZqpump","price":0.0012502360318790982,"priceChange24hPercent":2231.1142371783385,"volume24h":33239123.370392002,"volume24hChangePercent":209.88211587218456,"view24h":736,"view24hChangePercent":36700,"liquidity":205677.4681550379,"tokenData":{"name":"Junjun","symbol":"JUNJUN","decimals":6,"icon":"https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FGgtcxXTXEAAU9xx.jpg%3Fformat%3Djpg%26name%3Dthumb","website":null,"jupStrict":false},"network":"solana"},{"token":"DqrcZRHM9JuCUhnLyaWF7rLLjxE5h3MbiG7iferUpump","price":0.02918319308320173,"priceChange24hPercent":163.46073467414317,"volume24h":78822407.7879715,"volume24hChangePercent":-47.06814623232873,"view24h":625,"view24hChangePercent":1036.3636363636363,"liquidity":2395812.166924909,"tokenData":{"name":"Crypto Agent Trading","symbol":"CATG","decimals":6,"icon":"https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmQYCpwKrXq2kRFjkMefyZq39JouTu4Fp5HT8G6SJNHNyQ","website":null,"jupStrict":false},"network":"solana"},{"token":"9DHe3pycTuymFk4H4bbPoAJ4hQrr2kaLDF6J6aAKpump","price":0.10679252528319372,"priceChange24hPercent":68.24783177339529,"volume24h":123172407.29608853,"volume24hChangePercent":28.19905252119374,"view24h":420,"view24hChangePercent":3.194103194103194,"liquidity":5758167.430412731,"tokenData":{"name":"Hive AI","symbol":"BUZZ","decimals":6,"icon":"https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQme1AwRhgU8LVpLHzVGpKrRzUEUwMjMxS4GAbarmrFoiEJ","website":null,"jupStrict":false},"network":"solana"},{"token":"FB4oRMhbV8kD6YH6hRErmdUxPPFrz1LdQfwE9JDNpump","price":0.005986883129509372,"priceChange24hPercent":10173.757948489125,"volume24h":42362978.87529595,"volume24hChangePercent":null,"view24h":173,"view24hChangePercent":null,"liquidity":734127.476557068,"tokenData":{"name":"Mements","symbol":"MEMENTS","decimals":6,"icon":"https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmdvS72MPoLv5H2eaD5pdUi48baNxJT9SmmYqwitGXBbAh","website":null,"jupStrict":false},"network":"solana"},{"token":"G6esXaVQUsZKtStZn7bvTkx4nMnovUXRsrox9Lovpump","price":0.0018248934925413594,"priceChange24hPercent":31706.609767576185,"volume24h":14474875.551412912,"volume24hChangePercent":30008747122475350000,"view24h":359,"view24hChangePercent":null,"liquidity":263471.3818434743,"tokenData":{"name":"FEETCOIN","symbol":"FEETCOIN","decimals":6,"icon":"https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmVUsiw15EMfXHRfZVvEdqQ6LYTESYeyGvkRa8UNbRJbpo","website":null,"jupStrict":false},"network":"solana"},{"token":"3N2ETvNpPNAxhcaXgkhKoY1yDnQfs41Wnxsx5qNJpump","price":0.06884833899451458,"priceChange24hPercent":43.99620879044186,"volume24h":40839063.37741895,"volume24hChangePercent":10.738269337935973,"view24h":252,"view24hChangePercent":154.54545454545453,"liquidity":3520701.102083004,"tokenData":{"name":"neur.sh","symbol":"NEUR","decimals":6,"icon":"https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmaYbreB4KQHWdUxNS6dEymFDxjrmeL75ncweWsrNjup5T","website":"https://neur.sh","jupStrict":true},"network":"solana"},{"token":"BAEXK4X6B3hkqmEkPuyyZQ5fZUb5iZ6SaJ7a9UDnpump","price":0.042530951579565,"priceChange24hPercent":40.424089972582344,"volume24h":23805271.624960236,"volume24hChangePercent":-17.1208393332855,"view24h":289,"view24hChangePercent":-39.791666666666664,"liquidity":1938506.6248593018,"tokenData":{"name":"AI-Powered CMP","symbol":"AICMP","decimals":6,"icon":"https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQma6SPaGQPBXMRrFDQzN5jTNzLxyJFfqiKGUaBxjjXXFyM","website":"https://fsic.gitbook.io/fsic-aicmp","jupStrict":true},"network":"solana"},{"token":"Hjw6bEcHtbHGpQr8onG3izfJY5DJiWdt7uk2BfdSpump","price":0.0753263947910359,"priceChange24hPercent":8.840267992684234,"volume24h":35921477.84248087,"volume24hChangePercent":13.347275933021018,"view24h":207,"view24hChangePercent":42.758620689655174,"liquidity":3936866.807253106,"tokenData":{"name":"SwarmNode.ai","symbol":"SNAI","decimals":6,"icon":"https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmf978WVwJWAjeJaJY5jGiZ3YEdQgC43Cn4QowytAYos78","website":"https://swarmnode.ai/","jupStrict":true},"network":"solana"},{"token":"61V8vBaqAGMpgDQi4JcAwo1dmBGHsyhzodcPqnEVpump","price":0.34769724623759135,"priceChange24hPercent":-8.775422765168258,"volume24h":85622875.79799727,"volume24hChangePercent":48.82653974393631,"view24h":72,"view24hChangePercent":-50,"liquidity":12399530.595450865,"tokenData":{"name":"AI Rig Complex","symbol":"arc","decimals":6,"icon":"https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmPDJuEobBcLZihjFCvkWA8c1FiW7UzM2ctFdiffSLxf1d","website":"https://www.arc.fun/index.html","jupStrict":true},"network":"solana"}],"total":10,"success":true,"statusCode":200}
+{
+    "data": [
+        {
+            "token": "98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump",
+            "price": 0.041833154290486584,
+            "priceChange24hPercent": 71344.34254450061,
+            "volume24h": 209590676.83527213,
+            "volume24hChangePercent": null,
+            "view24h": 636,
+            "view24hChangePercent": null,
+            "liquidity": 3304728.7860865504,
+            "tokenData": {
+                "name": "Large Language Model",
+                "symbol": "LLM",
+                "decimals": 6,
+                "icon": "https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmQmQUoTpBBcgnA5Bx5KpmgNLqLMuRRzvrUf3h85xUqo7W",
+                "website": null,
+                "jupStrict": false
+            },
+            "network": "solana"
+        },
+        {
+            "token": "2hM8gVaKdz3Eokx2QZY1a9oZDPx9J3zWP4gxzsZqpump",
+            "price": 0.0012502360318790982,
+            "priceChange24hPercent": 2231.1142371783385,
+            "volume24h": 33239123.370392002,
+            "volume24hChangePercent": 209.88211587218456,
+            "view24h": 736,
+            "view24hChangePercent": 36700,
+            "liquidity": 205677.4681550379,
+            "tokenData": {
+                "name": "Junjun",
+                "symbol": "JUNJUN",
+                "decimals": 6,
+                "icon": "https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FGgtcxXTXEAAU9xx.jpg%3Fformat%3Djpg%26name%3Dthumb",
+                "website": null,
+                "jupStrict": false
+            },
+            "network": "solana"
+        },
+        {
+            "token": "DqrcZRHM9JuCUhnLyaWF7rLLjxE5h3MbiG7iferUpump",
+            "price": 0.02918319308320173,
+            "priceChange24hPercent": 163.46073467414317,
+            "volume24h": 78822407.7879715,
+            "volume24hChangePercent": -47.06814623232873,
+            "view24h": 625,
+            "view24hChangePercent": 1036.3636363636363,
+            "liquidity": 2395812.166924909,
+            "tokenData": {
+                "name": "Crypto Agent Trading",
+                "symbol": "CATG",
+                "decimals": 6,
+                "icon": "https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmQYCpwKrXq2kRFjkMefyZq39JouTu4Fp5HT8G6SJNHNyQ",
+                "website": null,
+                "jupStrict": false
+            },
+            "network": "solana"
+        },
+        {
+            "token": "9DHe3pycTuymFk4H4bbPoAJ4hQrr2kaLDF6J6aAKpump",
+            "price": 0.10679252528319372,
+            "priceChange24hPercent": 68.24783177339529,
+            "volume24h": 123172407.29608853,
+            "volume24hChangePercent": 28.19905252119374,
+            "view24h": 420,
+            "view24hChangePercent": 3.194103194103194,
+            "liquidity": 5758167.430412731,
+            "tokenData": {
+                "name": "Hive AI",
+                "symbol": "BUZZ",
+                "decimals": 6,
+                "icon": "https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQme1AwRhgU8LVpLHzVGpKrRzUEUwMjMxS4GAbarmrFoiEJ",
+                "website": null,
+                "jupStrict": false
+            },
+            "network": "solana"
+        },
+        {
+            "token": "FB4oRMhbV8kD6YH6hRErmdUxPPFrz1LdQfwE9JDNpump",
+            "price": 0.005986883129509372,
+            "priceChange24hPercent": 10173.757948489125,
+            "volume24h": 42362978.87529595,
+            "volume24hChangePercent": null,
+            "view24h": 173,
+            "view24hChangePercent": null,
+            "liquidity": 734127.476557068,
+            "tokenData": {
+                "name": "Mements",
+                "symbol": "MEMENTS",
+                "decimals": 6,
+                "icon": "https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmdvS72MPoLv5H2eaD5pdUi48baNxJT9SmmYqwitGXBbAh",
+                "website": null,
+                "jupStrict": false
+            },
+            "network": "solana"
+        },
+        {
+            "token": "G6esXaVQUsZKtStZn7bvTkx4nMnovUXRsrox9Lovpump",
+            "price": 0.0018248934925413594,
+            "priceChange24hPercent": 31706.609767576185,
+            "volume24h": 14474875.551412912,
+            "volume24hChangePercent": 30008747122475350000,
+            "view24h": 359,
+            "view24hChangePercent": null,
+            "liquidity": 263471.3818434743,
+            "tokenData": {
+                "name": "FEETCOIN",
+                "symbol": "FEETCOIN",
+                "decimals": 6,
+                "icon": "https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmVUsiw15EMfXHRfZVvEdqQ6LYTESYeyGvkRa8UNbRJbpo",
+                "website": null,
+                "jupStrict": false
+            },
+            "network": "solana"
+        },
+        {
+            "token": "3N2ETvNpPNAxhcaXgkhKoY1yDnQfs41Wnxsx5qNJpump",
+            "price": 0.06884833899451458,
+            "priceChange24hPercent": 43.99620879044186,
+            "volume24h": 40839063.37741895,
+            "volume24hChangePercent": 10.738269337935973,
+            "view24h": 252,
+            "view24hChangePercent": 154.54545454545453,
+            "liquidity": 3520701.102083004,
+            "tokenData": {
+                "name": "neur.sh",
+                "symbol": "NEUR",
+                "decimals": 6,
+                "icon": "https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmaYbreB4KQHWdUxNS6dEymFDxjrmeL75ncweWsrNjup5T",
+                "website": "https://neur.sh",
+                "jupStrict": true
+            },
+            "network": "solana"
+        },
+        {
+            "token": "BAEXK4X6B3hkqmEkPuyyZQ5fZUb5iZ6SaJ7a9UDnpump",
+            "price": 0.042530951579565,
+            "priceChange24hPercent": 40.424089972582344,
+            "volume24h": 23805271.624960236,
+            "volume24hChangePercent": -17.1208393332855,
+            "view24h": 289,
+            "view24hChangePercent": -39.791666666666664,
+            "liquidity": 1938506.6248593018,
+            "tokenData": {
+                "name": "AI-Powered CMP",
+                "symbol": "AICMP",
+                "decimals": 6,
+                "icon": "https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQma6SPaGQPBXMRrFDQzN5jTNzLxyJFfqiKGUaBxjjXXFyM",
+                "website": "https://fsic.gitbook.io/fsic-aicmp",
+                "jupStrict": true
+            },
+            "network": "solana"
+        },
+        {
+            "token": "Hjw6bEcHtbHGpQr8onG3izfJY5DJiWdt7uk2BfdSpump",
+            "price": 0.0753263947910359,
+            "priceChange24hPercent": 8.840267992684234,
+            "volume24h": 35921477.84248087,
+            "volume24hChangePercent": 13.347275933021018,
+            "view24h": 207,
+            "view24hChangePercent": 42.758620689655174,
+            "liquidity": 3936866.807253106,
+            "tokenData": {
+                "name": "SwarmNode.ai",
+                "symbol": "SNAI",
+                "decimals": 6,
+                "icon": "https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmf978WVwJWAjeJaJY5jGiZ3YEdQgC43Cn4QowytAYos78",
+                "website": "https://swarmnode.ai/",
+                "jupStrict": true
+            },
+            "network": "solana"
+        },
+        {
+            "token": "61V8vBaqAGMpgDQi4JcAwo1dmBGHsyhzodcPqnEVpump",
+            "price": 0.34769724623759135,
+            "priceChange24hPercent": -8.775422765168258,
+            "volume24h": 85622875.79799727,
+            "volume24hChangePercent": 48.82653974393631,
+            "view24h": 72,
+            "view24hChangePercent": -50,
+            "liquidity": 12399530.595450865,
+            "tokenData": {
+                "name": "AI Rig Complex",
+                "symbol": "arc",
+                "decimals": 6,
+                "icon": "https://wsrv.nl/?w=128&h=128&default=1&url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmPDJuEobBcLZihjFCvkWA8c1FiW7UzM2ctFdiffSLxf1d",
+                "website": "https://www.arc.fun/index.html",
+                "jupStrict": true
+            },
+            "network": "solana"
+        }
+    ],
+    "total": 10,
+    "success": true,
+    "statusCode": 200
+}
