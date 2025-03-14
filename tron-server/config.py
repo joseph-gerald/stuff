@@ -7,7 +7,7 @@ load_dotenv()
 WALLETS = []
 WALLETS_LENGTH = os.getenv("WALLETS")
 
-for i in range(int(WALLETS_LENGTH)):
+for i in range(1, int(WALLETS_LENGTH) + 1):
     public_key = os.getenv(f"{i}_PUB")
     private_key = os.getenv(f"{i}_PRI")
     password = os.getenv(f"{i}_PAS")

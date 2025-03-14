@@ -10,6 +10,8 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 client = Tron(HTTPProvider(api_key=config.API_KEY))
 
+for wallet in config.WALLETS:
+    print(wallet)
 @app.route('/transfer', methods=['GET'])
 def transfer():
     try:
