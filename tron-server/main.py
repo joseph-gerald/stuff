@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 from tronpy import Tron
-from tronpy.keys import PrivateKey
 from tronpy.providers import HTTPProvider
 import config
 
@@ -10,27 +9,39 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 client = Tron(HTTPProvider(api_key=config.API_KEY))
-priv_key = PrivateKey(bytes.fromhex(config.PRIVATE_KEY))
 
 @app.route('/transfer', methods=['GET'])
 def transfer():
     try:
         to = request.args.get('to')
         amount = float(request.args.get('amount'))
+        address = request.args.get('wallet')
         password = request.args.get('password')
     except:
         return jsonify({'error': 'error'}), 400
 
-    if not to or not amount or not password:
+    if not to or not amount or not password or not address:
         return jsonify({'error': 'missing parameters'}), 400
     
-    if password != config.PASSWORD:
-        return jsonify({'error': 'invalid password'}), 401
+    pub_key = None
+    priv_key = None
+
+    for wallet in config.WALLETS:
+        if wallet['public_key'] == address:
+            if wallet['password'] != password:
+                return jsonify({'error': 'invalid password'}), 400
+
+            pub_key = wallet['public_key']
+            priv_key = wallet['private_key']
+            break
+
+    if not priv_key:
+        return jsonify({'error': 'invalid address'}), 400
 
     print(f"Transferring {amount} TRX to {to}")
     
     txn = (
-        client.trx.transfer(config.PUBLIC_KEY, to, int(amount * 1_000_000))
+        client.trx.transfer(pub_key, to, int(amount * 1_000_000))
         .build()
         .inspect()
         .sign(priv_key)
@@ -41,7 +52,15 @@ def transfer():
 
 @app.route('/balance', methods=['GET'])
 def balance():
-    balance = client.get_account_balance(config.PUBLIC_KEY)
+    try :
+        address = request.args.get('wallet')
+    except:
+        return jsonify({'error': 'error'}), 400
+
+    if not address:
+        return jsonify({'error': 'missing parameters'}), 400
+
+    balance = client.get_account_balance(address)
     return jsonify({'balance': balance})
 
 @app.errorhandler(404)

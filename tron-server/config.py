@@ -1,10 +1,22 @@
 import os
 from dotenv import load_dotenv
+from tronpy.keys import PrivateKey
 
 load_dotenv() 
 
-PRIVATE_KEY = os.getenv("PRIVATE_KEY")
-PUBLIC_KEY = os.getenv("PUBLIC_KEY")
+WALLETS = []
+WALLETS_LENGTH = os.getenv("WALLETS")
+
+for i in range(int(WALLETS_LENGTH)):
+    public_key = os.getenv(f"{i}_PUB")
+    private_key = os.getenv(f"{i}_PRI")
+    password = os.getenv(f"{i}_PAS")
+    
+    WALLETS.append({
+        "public_key": public_key,
+        "private_key": private_key,
+        "password": password
+    })
+
 API_KEY = os.getenv("API_KEY")
-PASSWORD = os.getenv("PASSWORD")
 PORT = os.getenv("PORT")
