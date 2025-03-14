@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 from tronpy import Tron
+from tronpy.keys import PrivateKey
 from tronpy.providers import HTTPProvider
 import config
 
@@ -46,7 +47,7 @@ def transfer():
         client.trx.transfer(pub_key, to, int(amount * 1_000_000))
         .build()
         .inspect()
-        .sign(priv_key)
+        .sign(PrivateKey(bytes.fromhex(priv_key)))
         .broadcast()
     )
     
