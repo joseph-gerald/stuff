@@ -1,20 +1,43 @@
 import json
 import requests
 import pyperclip
+from openai import OpenAI
+import os
+
+# check if convo.json exists
+
+SYSTEM_PROMPT = "You are a helpful assistant."
+CONVERSATION = []
+
+if not os.path.exists("convo.json"):
+    with open("convo.json", "w") as f:
+        json.dump([
+            {"role": "system", "content": SYSTEM_PROMPT },
+        ], f)
+
+with open("convo.json", "r") as f:
+    CONVERSATION = json.load(f)
 
 clipboard_content = pyperclip.paste()
 
+CONVERSATION.append({"role": "user", "content": clipboard_content})
+
 pyperclip.copy("PLEASE_WAIT")
 
-params = {
-    "model": "@cf/meta/llama-3.1-8b-instruct-fast",
-    "q": clipboard_content,
-    "c": "You are a intelligent ai model which will try to answer questions quickly and accurately whilst not wasting time on unnecessary details unless instructed to.",
-    #"c": "You are a MATH solver robot, all you do is get math questions and ONLY provide the answers and not any comments or explanations.",
-}
+client = OpenAI(
+    api_key="",
+)
 
-r = requests.get("https://mistral.jooo.tech", params=params)
+completion = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=CONVERSATION,
+)
 
-response = r.json()["response"]
-print(response)
-pyperclip.copy(response)
+chat_message = completion.choices[0].message.content
+
+CONVERSATION.append({ "role": "assistant", "content": chat_message })
+
+with open("convo.json", "w") as f:
+    json.dump(CONVERSATION, f)
+
+pyperclip.copy(chat_message)
