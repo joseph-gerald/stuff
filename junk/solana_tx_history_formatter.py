@@ -41,7 +41,7 @@ def konverter_solana_transaksjoner(inndata):
             forklaring = f"Transfer from {fra_adresse}"
             
         # Lag ny linje med ønsket format
-        nye_linjer.append(f'"{signature}";"{dato_str}";"{forklaring}";"{belop_desimal:.2f}";"USD"')
+        nye_linjer.append(f'"{signature}";"{dato_str}";"{forklaring}";"{belop_desimal:.2f}";"EUR"')
     
     # Kombiner header og alle konverterte linjer
     return ny_header + '\n'.join(nye_linjer)

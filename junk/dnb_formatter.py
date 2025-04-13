@@ -1,6 +1,6 @@
 def konverter_fil(inndata):
     # Lag ny header-linje med ønskede kolonnenavn
-    ny_header = '"Date";"Explanation";"Rentdate";"Amount"\n'
+    ny_header = '"Date";"Explanation";"Rentdate";"Amount";"Currency"\n'
     
     # Behandle hver linje i inndata
     nye_linjer = []
@@ -25,7 +25,7 @@ def konverter_fil(inndata):
             belop = str(verdier[4])
         
         # Lag ny linje med ønsket format
-        nye_linjer.append(f'{dato};{forklaring};{rentedato};"{belop}"')
+        nye_linjer.append(f'{dato};{forklaring};{rentedato};"{belop}";"NOK"')
     
     # Kombiner header og alle linjer
     return ny_header + '\n'.join(nye_linjer)
